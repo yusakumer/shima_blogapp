@@ -18,6 +18,16 @@
   </head>
 
   <body>
+  <header class="header">
+    <p class="header-pageTitle">新着記事</p>
+    <div class="dropdown">
+      <%= image_tag "default-avatar.png", class: "header-avatar dropbtn" %>
+      <div class="dropdown-content">
+        <a href="#">プロフィール</a>
+        <a href="#">ログアウト</a>
+      </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>
