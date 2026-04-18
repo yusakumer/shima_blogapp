@@ -1,41 +1,43 @@
+<div class="card">
+  <div class="card_image">
+    <%= image_tag 'eyecatch1.png' %>
+  </div>
+  <div class="card_title">
+    <%= @article.title %>
+  </div>
 
-  <div class="card">
-    <div class="card_image">
-      <%= image_tag 'eyecatch1.png' %>
-    </div>
-    <div class="card_title">
-      <%= @article.title %>
-    </div>
+  <div class="article_content">
+    <%= @article.content %>
+  </div>
 
-    <div class="article_content">
-      <%= @article.content %>
+  <div class="card_content">
+    <div class="card_heart">
+      <%= image_tag 'heart.svg' %>
+      <span>23</span>
     </div>
-
-    <div class="card_content">
-      <div class="card_heart">
-        <%= image_tag 'heart.svg' %>
-        <span>23</span>
+    <div class="card_detail">
+      <%= image_tag 'default-avatar.png' %>
+      <div>
+        <p>cohki0305</p>
+        <p>2020/4/16</p>
       </div>
-      <div class="card_detail">
-        <%= image_tag 'default-avatar.png' %>
-        <div>
-          <p>cohki0305</p>
-          <p>2020/4/16</p>
-        </div>
-        <div class="article_detail_actions">
-          <div class="dropdown">
-            <%= image_tag 'actions.svg',class: 'dropbtn' %>
-            <div class="dropdown-content mini">
-              <%= link_to '編集する',edit_article_path(@article) %>
-            </div>
+      <div class="article_detail_actions">
+        <div class="dropdown">
+          <%= image_tag 'actions.svg', class: 'dropbtn' %>
+          <div class="dropdown-content mini">
+            <%= link_to '編集する', edit_article_path(@article) %>
+            <%= link_to '削除する',
+                        article_path(@article),
+                        data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } %>
           </div>
         </div>
       </div>
     </div>
-    <div class="article_content">
-      <%= @article.content %>
-    </div>
-    <div class="article_heart">
-      <%= image_tag 'heart.svg' %>
-    </div>
   </div>
+  <div class="article_content">
+    <%= @article.content %>
+  </div>
+  <div class="article_heart">
+    <%= image_tag 'heart.svg' %>
+  </div>
+</div>
