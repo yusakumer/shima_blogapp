@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   def index
-    @article = Article.first
+    @articles = Article.all
     render "articles/index"
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    render "articles/show"
   end
 end
