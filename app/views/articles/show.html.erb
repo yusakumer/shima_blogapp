@@ -19,7 +19,7 @@
       <%= image_tag 'default-avatar.png' %>
       <div>
         <p>cohki0305</p>
-        <p>2020/4/16</p>
+        <p><%= @article.display_created_at %></p>
       </div>
       <div class="article_detail_actions">
         <div class="dropdown">
@@ -33,11 +33,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="article_content">
-    <%= @article.content %>
-  </div>
-  <div class="article_heart">
-    <%= image_tag 'heart.svg' %>
   </div>
 </div>
