@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   root to: "articles#index"
-  get "/" => "articles#index"
 
   resources :articles
 end

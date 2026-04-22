@@ -28,6 +28,13 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 gem "faker"
 
+gem "hamlit"
+
+gem "annotate"
+
+gem "better_errors"
+gem "binding_of_caller"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -42,10 +49,11 @@ gem "importmap-rails"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-  gem 'pry-byebug'
+  gem "pry-byebug"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
+  gem "rubocop-rails"
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
@@ -54,6 +62,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  gem "erb2haml"
 end
 
 group :test do
@@ -61,3 +71,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "haml-rails", "~> 3.0"
+
+gem "html2haml", "~> 2.3"
