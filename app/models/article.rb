@@ -25,11 +25,14 @@ class Article < ApplicationRecord
 
   validate :validate_title_and_content_length
 
+  belongs_to :user, dependent: :destroy
+
   def display_created_at
     I18n.l(self.created_at, format: :default)
   end
 
   private
+
   def validate_title_and_content_length
     char_count = self.title.length + self.content.length
     unless char_count > 100
