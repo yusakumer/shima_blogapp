@@ -17,3 +17,12 @@
       = f.label :gender,'性別'
     %div
       = f.select :gender, Profile.genders.keys,{},{class: 'text'}
+    %div
+      = f.label :birthbay,'生年月日'
+    %div
+      = f.date_field :birthbay, class: 'text'
+    %div
+      = f.label :subscribed,'通知を受け取る'
+      = f.check_box :subscribed
+
+    = f.submit '保存', class: 'btn-primary'
