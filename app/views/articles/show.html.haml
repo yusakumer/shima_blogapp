@@ -24,3 +24,8 @@
             = link_to '削除する',                                              |
               article_path(@article),                                      |
               data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } |
+
+
+.container
+  = link_to new_article_comment_path(@article) do
+    .btn-secondary コメント追加
