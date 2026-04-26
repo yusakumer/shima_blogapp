@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comments = @article.comments
     render "articles/show"
   end
 
