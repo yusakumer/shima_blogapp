@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comments = @article.comments
-    render "articles/show"
+    render :show
   end
 
   def new
@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :eyecatch)
   end
 
   def set_article
