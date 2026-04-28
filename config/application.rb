@@ -10,7 +10,7 @@ module Blogapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
 
-    if ['development', 'test'].include? ENV['RAILS_ENV']
+    if %w[development test].include? ENV['RAILS_ENV']
       Dotenv::Railtie.load
     end
 
