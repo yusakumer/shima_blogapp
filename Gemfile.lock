@@ -124,6 +124,10 @@ GEM
       railties (>= 7.0)
       responders
       warden (~> 1.2.3)
+    dotenv (3.2.0)
+    dotenv-rails (3.2.0)
+      dotenv (= 3.2.0)
+      railties (>= 6.1)
     drb (2.2.3)
     erb (6.0.2)
     erb2haml (0.1.5)
@@ -424,6 +428,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  dotenv-rails
   erb2haml
   faker
   haml-rails (~> 3.0)
