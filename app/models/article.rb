@@ -3,7 +3,6 @@
 # Table name: articles
 #
 #  id         :bigint           not null, primary key
-#  content    :text             not null
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -15,15 +14,12 @@
 #
 class Article < ApplicationRecord
   has_one_attached :eyecatch
+  has_rich_text :content
 
   validates :title, presence: true, length: { minimum: 2, maximum: 100 }, format: { with: /\A(?!\@)/ }
 
   # length
   validates :content, presence: true
-  validates :content, length: { minimum: 10, maximum: 1000 }
-  validates :content, uniqueness: true
-
-  validate :validate_title_and_content_length
 
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
