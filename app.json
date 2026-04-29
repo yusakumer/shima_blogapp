@@ -1,0 +1,17 @@
+{
+  "name": "shima_blogapp",
+  "description": "This is blogapp",
+  "keyword": [],
+  "website": "",
+  "repository": "https://github.com/yusakumer/shima_blogapp.git",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:essential-0"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/node.js"
+    },{
+      "url": "heroku/ruby"
+  }]
+}

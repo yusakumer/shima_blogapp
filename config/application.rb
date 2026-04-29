@@ -9,6 +9,11 @@ Bundler.require(*Rails.groups)
 module Blogapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+
+    if %w[development test].include? ENV['RAILS_ENV']
+      Dotenv::Railtie.load
+    end
+
     config.load_defaults 7.2
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
