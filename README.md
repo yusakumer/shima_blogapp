@@ -25,3 +25,5 @@ Things you may want to cover:
 
 
 *AWSデプロイ
+
+*follow機能
