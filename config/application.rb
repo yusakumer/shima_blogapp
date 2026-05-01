@@ -11,7 +11,7 @@ module Blogapp
     # Initialize configuration defaults for originally generated Rails version.
 
     if %w[development test].include? ENV['RAILS_ENV']
-      Dotenv::Railtie.load
+      Dotenv::Rails.load
     end
 
     config.load_defaults 7.2
