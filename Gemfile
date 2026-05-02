@@ -82,3 +82,5 @@ end
 gem "haml-rails", "~> 3.0"
 
 gem "html2haml", "~> 2.3"
+
+gem "active_decorator"
