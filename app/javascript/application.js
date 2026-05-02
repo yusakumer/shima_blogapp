@@ -3,10 +3,15 @@ import "@hotwired/turbo-rails"
 
 import "trix"
 import "@rails/actiontext"
+import axios from "axios";
 
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('turbo:load',() => {
+
     $(".article_title").on('click',() => {
-        window.alert("clicked")
+        axios.get("/")
+            .then((res) => {
+                console.log(res)
+            })
     })
 })
