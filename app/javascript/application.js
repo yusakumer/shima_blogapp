@@ -3,3 +3,10 @@ import "@hotwired/turbo-rails"
 
 import "trix"
 import "@rails/actiontext"
+
+
+document.addEventListener('DOMContentLoaded',() => {
+    $(".article_title").on('click',() => {
+        window.alert("clicked")
+    })
+})
