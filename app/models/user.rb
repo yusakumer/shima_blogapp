@@ -49,11 +49,16 @@ class User < ApplicationRecord
   end
 
   def follow!(user)
-    following_relationships.create!(following_id: user.id)
+
+    following_relationships.create!(following_id: get_user_id(user))
   end
 
   def unfollow!(user)
-    following_relationships.find_by!(following_id: user.id).destroy!
+    following_relationships.find_by!(following_id: get_user_id(user)).destroy!
+  end
+
+  def has_followed?(user)
+    following_relationships.exists?(following_id: user.id)
   end
 
   # def birthday
@@ -74,5 +79,16 @@ class User < ApplicationRecord
     else
       "default-avatar.png"
     end
+  end
+
+  private
+
+  def get_user_id(user)
+    if user.is_a?(User)
+      user_id = user.id
+    else
+      user_id = user
+    end
+    user_id
   end
 end
