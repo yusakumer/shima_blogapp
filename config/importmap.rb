@@ -7,3 +7,6 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
+pin "axios", to: "https://cdn.skypack.dev/axios@1.15.2"
+pin "@rails/ujs", to: "@rails--ujs.js" # @7.1.3
+pin "article", to: "article.js"
