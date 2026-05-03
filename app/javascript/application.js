@@ -4,6 +4,10 @@ import Rails from "@rails/ujs";
 import "trix"
 import "@rails/actiontext"
 import axios from "axios";
+import {initArticle} from "./article";
+
+axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
+
 
 const handleHeartDisplay = (hasLiked) => {
     if (hasLiked) {
@@ -15,13 +19,5 @@ const handleHeartDisplay = (hasLiked) => {
 
 
 document.addEventListener('turbo:load', () => {
-    const dataset = $("#article-show").data();
-    const articleId = dataset.articleId
-
-    axios.get(`/articles/${articleId}/like`)
-        .then((res) => {
-            const hasLiked = res.data.hasLiked
-            handleHeartDisplay(hasLiked)
-        })
-
+    initArticle()
 })
