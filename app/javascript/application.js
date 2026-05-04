@@ -4,18 +4,9 @@ import Rails from "@rails/ujs";
 import "trix"
 import "@rails/actiontext"
 import axios from "axios";
-import {initArticle} from "./article";
+import {initArticle} from "article";
 
 axios.defaults.headers.common['X-CSRF-Token'] = Rails.csrfToken()
-
-
-const handleHeartDisplay = (hasLiked) => {
-    if (hasLiked) {
-        $(".active_heart").removeClass("hidden")
-    } else {
-        $(".inactive_heart").removeClass("hidden")
-    }
-}
 
 
 document.addEventListener('turbo:load', () => {

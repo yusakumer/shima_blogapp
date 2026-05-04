@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
 
-  before_action :set_article, only: [:new, :create]
+  before_action :set_article, only: [:new, :create, :index]
+
+  def index
+    comments = @article.comments
+    render json: comments
+  end
 
   def new
     @comment = @article.comments.build

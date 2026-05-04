@@ -6,6 +6,16 @@ export const initArticle = () => {
 
     if (!articleId) return
 
+    axios.get(`/articles/${articleId}/comments`)
+        .then((res) => {
+            const comments = res.data
+            comments.forEach((comment) =>{
+                $(".comments-container").append(
+                    `<div class="article_comment"><p>${comment.content}</p></div>`
+                )
+            })
+        })
+
     axios.get(`/articles/${articleId}/like`)
         .then((res) => {
             const hasLiked = res.data.hasLiked
