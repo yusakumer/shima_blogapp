@@ -48,7 +48,7 @@ gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
 gem 'webpacker', '~> 4.0', '>= 4.0.7'
-gem 'psych', '~> 3.1'
+gem 'psych', '~> 5.3'
 
 gem "importmap-rails"
 
