@@ -7,11 +7,6 @@ class ArticlesController < ApplicationController
     render "articles/index"
   end
 
-  def show
-    @comments = @article.comments
-    render :show
-  end
-
   def new
     @article = current_user.articles.build
   end
