@@ -27,3 +27,5 @@ Things you may want to cover:
 *AWSデプロイ
 
 *follow機能
+
+foreman start -f Procfile.dev  
