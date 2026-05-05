@@ -36,6 +36,8 @@ gem "binding_of_caller"
 gem "devise"
 gem "aws-sdk-s3", require: false
 
+gem "sidekiq"
+
 gem "rails-erd", group: :development
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
