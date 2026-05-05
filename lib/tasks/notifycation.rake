@@ -1,0 +1,12 @@
+namespace :notifycation do
+  desc "利用者にメールを送付する"
+
+  task :send_emails_from_admin,["msg"]=> :environment do |t, args|
+    msg = args[:msg]
+    if msg.present?
+      NotificationFromAdminJob.perform_later(msg)
+    else
+      puts "送信できませんでした"
+    end
+  end
+end
