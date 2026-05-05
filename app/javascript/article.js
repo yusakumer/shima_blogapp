@@ -29,7 +29,7 @@ export const initArticle = () => {
             })
         })
 
-    axios.get(`/articles/${articleId}/like`)
+    axios.get(`/api/articles/${articleId}/like`)
         .then((res) => {
             const hasLiked = res.data.hasLiked
             if (hasLiked) {
@@ -44,7 +44,7 @@ export const initArticle = () => {
     $(document).on("click", ".add-comment-btn", () => {
         const content = $("#comment_content").val()
         if (content) {
-            axios.post(`/articles/${articleId}/comments`, {
+            axios.post(`/api/articles/${articleId}/comments`, {
                 comment: {content: content}
             })
                 .then((res) => {
@@ -59,7 +59,7 @@ export const initArticle = () => {
     })
 
     $(document).on("click", ".inactive_heart", () => {
-        axios.post(`/articles/${articleId}/like`)
+        axios.post(`/api/articles/${articleId}/like`)
             .then(() => {
                 $(".inactive_heart").addClass("hidden")
                 $(".active_heart").removeClass("hidden")
@@ -67,7 +67,7 @@ export const initArticle = () => {
     })
 
     $(document).on("click", ".active_heart", () => {
-        axios.delete(`/articles/${articleId}/like`)
+        axios.delete(`/api/articles/${articleId}/like`)
             .then(() => {
                 $(".active_heart").addClass("hidden")
                 $(".inactive_heart").removeClass("hidden")

@@ -1,4 +1,4 @@
-class UnfollowsController < ApplicationController
+class Apps::UnfollowsController < Apps::ApplicationController
   before_action :authenticate_user!
 
   def create
