@@ -8,10 +8,12 @@ const handleCommentForm = () => {
 }
 
 const appendNewComment = (comment) => {
-    $(".comments-container").append(
-        `<div class="article_comment"><p>${comment.content}</p></div>`
-    )
-}
+    const div = $("<div>").addClass("article_comment");
+    const p = $("<p>").text(comment.content);
+
+    div.append(p);
+    $(".comments-container").append(div);
+};
 
 
 
