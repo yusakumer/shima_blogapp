@@ -49,7 +49,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
-gem 'webpacker', '~> 4.0', '>= 4.0.7'
+gem 'webpacker', '~> 5.4'
 gem 'psych', '~> 3.1'
 
 gem "importmap-rails"
